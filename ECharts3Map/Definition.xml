@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gb2312"?>
+<ExtensionObject Path="ECharts3Map" 
+                 Label="ECharts3Map" 
+                 Description="ECharts3Map" 
+                 Type="object">
+                 <!--PageHeight="300000"-->
+                 
+                 
+  <Dimension Label="Dimension" Initial=""/>
+  <Measurement Label="Expression" Initial="" />
+  <Text Label="color" Type="text" Initial=""/>
+  <Text Label="mapFile" Type="text" Initial=""/>
+</ExtensionObject>
+
+
+

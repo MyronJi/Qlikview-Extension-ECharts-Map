@@ -1,0 +1,175 @@
+<div class="ToolWindow-MainBody" style="font-size:11px !important;">
+    <table width="326px">
+        <tr class="ToolProperty-Header">
+            <td onclick="Qva.SelectToolPane(this, false)">
+                Bullet Chart
+            </td>
+            <th onclick="Qva.SelectToolPane(this, true)">
+                <img alt="" src="unpinned.png" icon="web:unpinned" avq="img:.Chart.Title"/>
+            </th>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table width="100%">
+                    <colgroup>
+                        <col width="100px" />
+                        <col width="190px" />
+                        <col width="30px" />
+                    </colgroup>
+                    <tr>
+                        <td class="ToolProperty-Literal">
+                            Max Range Bar Value:
+                        </td>
+                        <td>
+                            <select style="width: 45pt" avq="edit:.Chart.Expression.0.0.SimpleFunc">
+                            </select>
+                            <select style="width: 90pt" avq="edit:.Chart.Expression.0.0.SimpleField">
+                            </select>
+                            <input style="width: 140pt" avq="edit:.Chart.Expression.0.0.Advanced" />
+                        </td>
+                        <td>
+                            <button class="ToolProperty-DialogButton" avq="dlg:.Chart.Expression.0.0.Definition:Expression.qvpp">
+                                ...<img alt="" src="more.png" icon="web:more" avq="img:.Chart.Title"/>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td class="ToolProperty-Literal">
+                        Max Range Bar Color (Hex or RGB):
+                      </td>
+                      <td colspan="2">
+                        <input style="width: 180px" avq="edit:.Chart.Text.0.Content" />
+                      </td>
+                    </tr>
+                    <tr>
+                        <td class="ToolProperty-Literal">
+                            Short Range Bar Value:
+                        </td>
+                        <td>
+                            <select style="width: 45pt" avq="edit:.Chart.Expression.1.0.SimpleFunc">
+                            </select>
+                            <select style="width: 90pt" avq="edit:.Chart.Expression.1.0.SimpleField">
+                            </select>
+                            <input style="width: 140pt" avq="edit:.Chart.Expression.1.0.Advanced" />
+                        </td>
+                        <td>
+                            <button class="ToolProperty-DialogButton" avq="dlg:.Chart.Expression.1.0.Definition:Expression.qvpp">
+                                ...<img alt="" src="more.png" icon="web:more" avq="img:.Chart.Title"/>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td class="ToolProperty-Literal">
+                        Short Range Bar Color (Hex or RGB):
+                      </td>
+                      <td colspan="2">
+                        <input style="width: 180px" avq="edit:.Chart.Text.1.Content" />
+                      </td>
+                    </tr>
+                    <tr>
+                        <td class="ToolProperty-Literal">
+                            Medium Range Bar Value:
+                        </td>
+                        <td>
+                            <select style="width: 45pt" avq="edit:.Chart.Expression.2.0.SimpleFunc">
+                            </select>
+                            <select style="width: 90pt" avq="edit:.Chart.Expression.2.0.SimpleField">
+                            </select>
+                            <input style="width: 140pt" avq="edit:.Chart.Expression.2.0.Advanced" />
+                        </td>
+                        <td>
+                            <button class="ToolProperty-DialogButton" avq="dlg:.Chart.Expression.2.0.Definition:Expression.qvpp">
+                                ...<img alt="" src="more.png" icon="web:more" avq="img:.Chart.Title"/>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td class="ToolProperty-Literal">
+                        Medium Range Bar Color (Hex or RGB):
+                      </td>
+                      <td colspan="2">
+                        <input style="width: 180px" avq="edit:.Chart.Text.2.Content" />
+                      </td>
+                    </tr>
+                    <tr>
+                        <td class="ToolProperty-Literal">
+                            Fill Bar Value:
+                        </td>
+                        <td>
+                            <select style="width: 45pt" avq="edit:.Chart.Expression.3.0.SimpleFunc">
+                            </select>
+                            <select style="width: 90pt" avq="edit:.Chart.Expression.3.0.SimpleField">
+                            </select>
+                            <input style="width: 140pt" avq="edit:.Chart.Expression.3.0.Advanced" />
+                        </td>
+                        <td>
+                            <button class="ToolProperty-DialogButton" avq="dlg:.Chart.Expression.3.0.Definition:Expression.qvpp">
+                                ...<img alt="" src="more.png" icon="web:more" avq="img:.Chart.Title"/>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td class="ToolProperty-Literal">
+                        Fill Bar Color (Hex or RGB):
+                      </td>
+                      <td colspan="2">
+                        <input style="width: 180px" avq="edit:.Chart.Text.3.Content" />
+                      </td>
+                    </tr>
+                    <tr>
+                        <td class="ToolProperty-Literal">
+                            Benchmark Value:
+                        </td>
+                        <td>
+                            <select style="width: 45pt" avq="edit:.Chart.Expression.4.0.SimpleFunc">
+                            </select>
+                            <select style="width: 90pt" avq="edit:.Chart.Expression.4.0.SimpleField">
+                            </select>
+                            <input style="width: 140pt" avq="edit:.Chart.Expression.4.0.Advanced" />
+                        </td>
+                        <td>
+                            <button class="ToolProperty-DialogButton" avq="dlg:.Chart.Expression.4.0.Definition:Expression.qvpp">
+                                ...<img alt="" src="more.png" icon="web:more" avq="img:.Chart.Title"/>
+                            </button>
+                        </td>
+                    </tr>
+		    <tr>
+                      <td class="ToolProperty-Literal">
+                        Show Tic Marks
+                      </td>
+                      <td colspan="2">
+                        <input type="checkbox" avq="edit:.Chart.Text.4.Content" />
+                      </td>
+                    </tr>
+		    <tr>
+			<td colspan="3"><br/>&nbsp;&nbsp;Set short and/or medium bars to zero if you do not want them<br/>&nbsp;&nbsp;to display.</td>
+		    </tr>
+		    <tr>
+			<td colspan="3"><br/>&nbsp;&nbsp;<a href="http://www.colorpicker.com/" target="_blank">Click here</a> for online help in finding your color values<br /></td>
+		    </tr>
+                </table>
+            </td>
+        </tr>
+      <tr class="ToolProperty-Header" avq="panel::Layout.qvpp">
+        <td>Layout</td>
+        <th></th>
+      </tr>
+      <tr style="display: none">
+        <td colspan="2"></td>
+      </tr>
+      <tr class="ToolProperty-Header" avq="panel::Caption.qvpp">
+        <td>Caption</td>
+        <th></th>
+      </tr>
+      <tr style="display: none">
+        <td colspan="2"></td>
+      </tr>
+      <tr class="ToolProperty-Header" avq="panel::Sharing.qvpp">
+        <td>Sharing</td>
+        <th></th>
+      </tr>
+      <tr style="display: none">
+        <td colspan="2"></td>
+      </tr>
+    </table>
+</div>
