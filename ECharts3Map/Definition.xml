@@ -6,10 +6,10 @@
                  <!--PageHeight="300000"-->
                  
                  
-  <Dimension Label="Dimension" Initial=""/>
-  <Measurement Label="Expression" Initial="" />
-  <Text Label="color" Type="text" Initial=""/>
-  <Text Label="mapFile" Type="text" Initial=""/>
+  <Dimension Label="Dimension" Initial="Province"/>
+  <Measurement Label="Expression" Initial="=sum(Value)" />
+  <Text Label="color" Type="text" Initial="lightskyblue;yellow;orangered"/>
+  <Text Label="mapFile" Type="text" Initial="='china'"/>
 </ExtensionObject>
 
 
