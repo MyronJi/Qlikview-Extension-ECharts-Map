@@ -1,4 +1,6 @@
-# ECharts3Map
+# EChartsGeoMap
+简单的教程：[博客园](http://www.cnblogs.com/moiam/p/6257217.html)
+
 - 可以在qlikview的Webview模式中运行的ECharts Map扩展。
 - 支持geoJson格式的地图。
 - 由于时间有限简单做了地图部分的功能，理论上可以使用ECharts的所有图表。
