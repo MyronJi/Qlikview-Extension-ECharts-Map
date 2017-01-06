@@ -1,12 +1,13 @@
-function ECharts3Map_Init() {
+/*! echartsGeoMap v1.0 | MyronJi |  */
+function EChartsGeoMap_Init() {
     if (document.charset) {
         document.charset = 'utf-8';
     }
-    Qva.AddExtension("ECharts3Map", function () {
+    Qva.AddExtension("EChartsGeoMap", function () {
         var _this = this;
 
         _this.ExtSettings = {};
-        _this.ExtSettings.ExtensionName = 'ECharts3Map';
+        _this.ExtSettings.ExtensionName = 'EChartsGeoMap';
         _this.ExtSettings.LoadUrl = Qva.Remote + (Qva.Remote.indexOf('?') >= 0 ? '&' : '?') + 'public=only' + '&name=';
 
         var mapPath = 'Extensions/' + _this.ExtSettings.ExtensionName + '/lib/maps';
@@ -50,7 +51,7 @@ function ECharts3Map_Init() {
             if ('' == maxValue) maxValue = 100;
             if ('' == minValue) minValue = 0;
             if ('' == colors) colors = ['lightskyblue', 'yellow', 'orangered'];
-            if ('' == colorType) colors = 0;
+            if ('' == colorType) colorType = 0;
 
             //set colorParameter 
             if (colorType == 0) {
@@ -122,7 +123,7 @@ function ECharts3Map_Init() {
                 $.ajaxSetup({
                     async: false
                 });
-                $.get(_this.ExtSettings.LoadUrl + 'Extensions/ECharts3Map/lib/maps/' + mapFile + '.json').done(function (geoJson) {
+                $.get(_this.ExtSettings.LoadUrl + 'Extensions/EChartsGeoMap/lib/maps/' + mapFile + '.json').done(function (geoJson) {
                     myChart.hideLoading();
                     echarts.registerMap(mapFile, geoJson);
                     option = {
@@ -164,7 +165,7 @@ function ECharts3Map_Init() {
                 if (typeof map != 'undefined') {
                     map.remove();
                 }
-                $(mapchart).html('<div id="errormsg">There was an issue creating the map. Did you forget to set the PopUPHTML?<br/><br/><b>Error Message:</b><br />' + err.message + '</div> ');
+                $(mapchart).html('<div id="errormsg">There was an issue creating the map. Did you forget to set the Expressions?<br/><br/><b>Error Message:</b><br />' + err.message + '</div> ');
 
             }
         }
@@ -172,4 +173,4 @@ function ECharts3Map_Init() {
 };
 
 
-ECharts3Map_Init();
+EChartsGeoMap_Init();
