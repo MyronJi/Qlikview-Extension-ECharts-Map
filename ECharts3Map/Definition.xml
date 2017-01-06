@@ -3,13 +3,13 @@
                  Label="ECharts3Map" 
                  Description="ECharts3Map" 
                  Type="object">
-                 <!--PageHeight="300000"-->
-                 
-                 
-  <Dimension Label="Dimension" Initial="Province"/>
-  <Measurement Label="Expression" Initial="=sum(Value)" />
-  <Text Label="color" Type="text" Initial="lightskyblue;yellow;orangered"/>
-  <Text Label="mapFile" Type="text" Initial="='china'"/>
+    <Dimension Label="Dimension" Initial=""/>
+    <Measurement Label="Expression" Initial="" />
+    <Measurement Label="Popup" Initial="" />
+    <Text Label="MapFile" Type="text" Initial="" Expression="china"/>
+    <Text Label="Color(L;N;U)" Type="text" Initial="" Expression="lightskyblue;yellow;orangered"/>
+    <Text Label="Color Piecewise" Type="text"/> 
+    <Text Label="Color Piecewise(L;U)" Type="text" Initial="" Expression="80;100"/>
 </ExtensionObject>
 
 

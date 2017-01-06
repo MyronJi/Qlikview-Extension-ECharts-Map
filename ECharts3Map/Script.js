@@ -23,10 +23,13 @@ function ECharts3Map_Init() {
         var mapData = [];
         var maxValue = 0;
         var minValue = 50;
+        var colorParameter = [];
+
         try {
             d = _this.Data
             for (var i = 0; i < d.Rows.length; i++) {
                 var r = d.Rows[i];
+                
                 obj = {
                     name: r[0].text,
                     value: parseFloat(r[1].text)
@@ -36,14 +39,46 @@ function ECharts3Map_Init() {
                 mapData.push(obj);
             }
 
-            var colors = _this.Layout.Text0.text.split(';');
-            var mapFile = _this.Layout.Text1.text.toString();
+            var mapFile = _this.Layout.Text0.text.toString();
+            var colors = _this.Layout.Text1.text.split(';');
+            var colorType = _this.Layout.Text2.text.toString();
+            var Piecewise_Lower = parseFloat(_this.Layout.Text3.text.split(';')[0]);
+            var Piecewise_Upper = parseFloat(_this.Layout.Text3.text.split(';')[1]);
+
 
             //set default value
             if ('' == maxValue) maxValue = 100;
             if ('' == minValue) minValue = 0;
             if ('' == colors) colors = ['lightskyblue', 'yellow', 'orangered'];
-            
+            if ('' == colorType) colors = 0;
+
+            //set colorParameter 
+            if (colorType == 0) {
+                colorParameter = {
+                    type: 'continuous',
+                    min: minValue,
+                    max: maxValue,
+                    text: ['High', 'Low'],
+                    realtime: false,
+                    calculable: true,
+                    inRange: {
+                        color: colors,//['lightskyblue','yellow', 'orangered'],
+                        symbolSize: [30, 100]
+                    }
+                }
+            }
+            else {
+                colorParameter = {
+                    type: 'piecewise',
+                    pieces: [
+                        { min: Piecewise_Upper, color: colors[2] },
+                        { min: Piecewise_Lower, max: Piecewise_Upper, color: colors[1] },
+                        { max: Piecewise_Lower, color: colors[0] }
+                    ],
+                    left: 'left',
+                    top: 'bottom'
+                }
+            }
             //Loading up the js files via the QlikView api that allows an array to be passed.   
             //After we load them up successfully, initialize the chart settings and append the chart
             Qv.LoadExtensionScripts(jsFiles, function () {
@@ -51,7 +86,7 @@ function ECharts3Map_Init() {
                 Init();
                 if ('' != mapFile) {
 
-                    InitChart(mapFile, mapData, maxValue, minValue, colors);
+                    InitChart(mapFile, mapData, maxValue, minValue);
                 } else {
                     $(mapchart).html('<div id="errormsg">There was an issue creating the map. Did you forget to set the MapFile?</div> ');
                 }
@@ -79,40 +114,30 @@ function ECharts3Map_Init() {
             $(_this.Element).append(mapchart);
         }
 
-        function InitChart(mapFile, mapData, maxValue, minValue, mapColor) {
+        function InitChart(mapFile, mapData, maxValue, minValue) {
             try {
                 var myChart = echarts.init(document.getElementById('Chart_' + _this.ExtSettings.UniqueId));
 
                 myChart.showLoading();
+                $.ajaxSetup({
+                    async: false
+                });
                 $.get(_this.ExtSettings.LoadUrl + 'Extensions/ECharts3Map/lib/maps/' + mapFile + '.json').done(function (geoJson) {
                     myChart.hideLoading();
                     echarts.registerMap(mapFile, geoJson);
                     option = {
                         tooltip: {
-                            trigger: 'item',
-                            formatter: '{b}<br/>{c}'
+                            trigger: 'item'
                         },
                         toolbox: {
                             show: true,
                             left: 'left',
                             top: 'top',
                             feature: {
-                                dataView: { readOnly: false },
-                                restore: {}
-                                //saveAsImage: {}
+                                dataView: { readOnly: false }
                             }
                         },
-                        visualMap: {
-                            min: minValue,
-                            max: maxValue,
-                            text: ['High', 'Low'],
-                            realtime: false,
-                            calculable: true,
-                            inRange: {
-                                color: mapColor,//['lightskyblue','yellow', 'orangered'],
-                                symbolSize: [30, 100]
-                            }
-                        },
+                        visualMap: colorParameter,
                         series: [
                             {
                                 name: 'data',
